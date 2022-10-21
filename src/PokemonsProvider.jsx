@@ -15,11 +15,20 @@ export function usePokemonContext() {
 export function PokemonProvider({ children }) {
     const [pokemons, setPokemons] = useState([]);
 
-    const getPokemon = async (pokemon) => await fetchPokemon(pokemon);
+    const getPokemon = async (pokemon) => {
+        const data = await fetchPokemon(pokemon);
+        const { name, types, sprites, stats } = data;
+        return {
+            name,
+            types,
+            sprites,
+            stats
+        };
+    }
     // useEffect
     useEffect(() => {
-        fetchPokemons(150).
-            then(dataPokemons => setPokemons(dataPokemons))
+        fetchPokemons(150)
+            .then(dataPokemons => setPokemons(dataPokemons))
             .catch(e => console.log(e))
     }, [])
 

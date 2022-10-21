@@ -1,4 +1,3 @@
-const BASE_URL = "http://pokeapi.co/api/v2/pokemon"
 /**
  * 
  * @param {Number} limit 'La cantidad de pokemones que vamos a recuperar' 
@@ -6,7 +5,7 @@ const BASE_URL = "http://pokeapi.co/api/v2/pokemon"
  */
 export const fetchPokemons = async (limit = 20, offset = 0) => {
     try {
-        const res = await fetch(`${BASE_URL}/?limit=${limit}&offset=${offset}`);
+        const res = await fetch("https://pokeapi.co/api/v2/pokemon" + "?limit=" + limit + "&offset=" + offset);
         const { results } = await res.json();
         return results;
     } catch (e) {
@@ -21,15 +20,9 @@ export const fetchPokemons = async (limit = 20, offset = 0) => {
  */
 export const fetchPokemon = async (pokemon) => {
     try {
-        const res = await fetch(BASE_URL + "/" + pokemon);
+        const res = await fetch("http://pokeapi.co/api/v2/pokemon/" + pokemon);
         const data = await res.json();
-        const { name, types, sprites, stats } = data;
-        return {
-            name,
-            types,
-            sprites,
-            stats
-        };
+        return data;
     } catch (e) {
         console.log(e.message);
     }
