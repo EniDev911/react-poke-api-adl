@@ -3,7 +3,6 @@ const CardPokemon = ({ pokemon }) => {
 
   const sprite = pokemon.sprites.other.dream_world.front_default;
 
-  console.log(pokemon)
   return (
     <div className='card'>
       <img src={sprite} alt={pokemon.name} />

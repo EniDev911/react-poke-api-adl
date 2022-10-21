@@ -13,15 +13,9 @@ const Pokemon = () => {
 
     useEffect(() => {
         getPokemon(name)
-            .then(data => {
-                const { name, types, sprites, stats } = data;
-                setPokemon({ name, types, sprites, stats })
-            })
+            .then(data => setPokemon(data))
             .catch(e => console.log(e.message))
-
-    }, [name])
-
-    console.log(pokemon);
+    }, [])
 
     return (
         <div>
