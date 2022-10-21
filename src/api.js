@@ -20,7 +20,7 @@ export const fetchPokemons = async (limit = 20, offset = 0) => {
  */
 export const fetchPokemon = async (pokemon) => {
     try {
-        const res = await fetch("http://pokeapi.co/api/v2/pokemon" + "/" + pokemon);
+        const res = await fetch("https://pokeapi.co/api/v2/pokemon" + "/" + pokemon);
         const data = await res.json();
         return data;
     } catch (e) {
