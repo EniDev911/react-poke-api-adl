@@ -19,7 +19,7 @@ const Pokemon = () => {
             })
             .catch(e => console.log(e.message))
 
-    }, [])
+    }, [name])
 
     console.log(pokemon);
 

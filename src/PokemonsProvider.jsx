@@ -18,8 +18,9 @@ export function PokemonProvider({ children }) {
     const getPokemon = async (pokemon) => await fetchPokemon(pokemon);
     // useEffect
     useEffect(() => {
-        fetchPokemons(110).
+        fetchPokemons(150).
             then(dataPokemons => setPokemons(dataPokemons))
+            .catch(e => console.log(e))
     }, [])
 
     return (
