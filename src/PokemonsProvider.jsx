@@ -23,7 +23,7 @@ export function PokemonProvider({ children }) {
             types,
             sprites,
             stats
-        };
+        }
     }
     // useEffect
     useEffect(() => {

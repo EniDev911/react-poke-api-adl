@@ -16,6 +16,7 @@ const Pokemones = () => {
         <div className='container'>
             <h2>Selecciona un pokemón</h2>
             <select onChange={({ target }) => setPokemon(target.value)}>
+                <option value="" selected>Elige un pokemón</option>
                 {pokemones.sort((a,b) => a.name > b.name ? 1 : -1).map((pokemon, index) => (
                     <option value={pokemon.name} key={index}>{pokemon.name}</option>
                 ))}
