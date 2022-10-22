@@ -8,8 +8,6 @@ import Pokemones from './pages/Pokemons'
 import Pokemon from './pages/Pokemon'
 
 function App() {
-
-
   return (
     <div className="App">
       <PokemonsProvider>

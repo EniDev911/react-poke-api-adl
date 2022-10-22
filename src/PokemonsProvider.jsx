@@ -12,7 +12,7 @@ export function usePokemonContext() {
     return useContext(pokemonContext);
 }
 
-export function PokemonProvider({ children }) {
+function PokemonProvider({ children }) {
     const [pokemons, setPokemons] = useState([]);
 
     const getPokemon = async (pokemon) => {
